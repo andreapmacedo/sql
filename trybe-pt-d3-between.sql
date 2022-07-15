@@ -1,5 +1,6 @@
 -- Operador IN
 
+SELECT * FROM sakila.payment;
 SELECT * FROM sakila.actor
 WHERE first_name = 'PENELOPE'
 OR first_name = 'NICK'
