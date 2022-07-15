@@ -88,8 +88,3 @@ WHERE rental_id = 10330;
 USE sakila;
 SELECT * FROM sakila.payment
 WHERE DATE(payment_date) = '2005-07-28' AND HOUR(payment_date) >= 22;
-
-
--- 5 Quantos pagamentos foram feitos entre 01/07/2005 e 22/08/2005
--- 6 Quantos pagamentos foram feitos entre 01/07/2005 e 22/08/2005
--- 7 Quantos pagamentos foram feitos entre 01/07/2005 e 22/08/2005
