@@ -17,6 +17,7 @@ INSERT INTO sakila.actor(first_name, last_name)
     ORDER BY customer_id
     LIMIT 5;
 
+
 INSERT INTO sakila.category (name)
 VALUES
     ('Sci-Fi'),
