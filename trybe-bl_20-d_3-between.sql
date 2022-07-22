@@ -75,7 +75,7 @@ WHERE payment_date BETWEEN '2005-07-01' AND '2005-08-22';
 -- 3 Usando a tabela rental, extraia data, ano, mês, dia, hora, minuto e segundo do registro com rental_id = 10330. Utilize a coluna rental_date para extrair as informações.
 USE sakila;
 SELECT DATE(rental_date) AS data,
-YEAR(rental_date) AS ano ,
+YEAR(rental_date) AS ano,
 MONTH(rental_date) AS mes,
 DAY(rental_date) AS dia,
 HOUR(rental_date) AS hora,
