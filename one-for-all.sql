@@ -2,9 +2,18 @@ DROP SCHEMA IF EXISTS SpotifyClone;
 CREATE DATABASE SpotifyClone;
 -- USE SpotifyClone;
 
+CREATE TABLE SpotifyClone.tb_plan (
+    id INTEGER auto_increment PRIMARY KEY NOT NULL,
+    plan_name VARCHAR(30) NOT NULL,
+    plan_price DECIMAL(10,2) NOT NULL,
+    date DATETIME NOT NULL
+);
+
 CREATE TABLE SpotifyClone.tb_user (
-  id INTEGER auto_increment PRIMARY KEY NOT NULL,
-  user_name VARCHAR(30) NOT NULL
+    id INTEGER auto_increment PRIMARY KEY NOT NULL,
+    user_name VARCHAR(30) NOT NULL,
+    id_plan INT NOT NULL,
+    FOREIGN KEY (id_plan) REFERENCES tb_plan (id)
 );
 
 CREATE TABLE SpotifyClone.tb_artist(
@@ -45,21 +54,6 @@ CREATE TABLE SpotifyClone.tb_followed_artist(
     id_artist INT NOT NULL,
     FOREIGN KEY (id_user) REFERENCES tb_user (id),
     FOREIGN KEY (id_artist) REFERENCES tb_artist (id)
-);
-
-CREATE TABLE SpotifyClone.tb_plan (
-    id INTEGER auto_increment PRIMARY KEY NOT NULL,
-    plan_name VARCHAR(30) NOT NULL,
-    plan_price DECIMAL(10,2) NOT NULL,
-    date DATETIME NOT NULL
-);
-  
-CREATE TABLE SpotifyClone.tb_user_plan(
-    id INTEGER auto_increment PRIMARY KEY NOT NULL,
-    id_user INT NOT NULL,
-    id_plan INT NOT NULL,
-    FOREIGN KEY (id_user) REFERENCES tb_user (id),
-    FOREIGN KEY (id_plan) REFERENCES tb_plan (id)
 );
 
 INSERT INTO SpotifyClone.tb_artist(artist_name)
